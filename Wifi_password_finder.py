@@ -4,7 +4,7 @@ import subprocess
 data = subprocess.check_output(['netsh','wlan','show','profiles']).decode('utf-8').split('\n')
 
 profiles = [iplit(":")[1][1:-1] for i in data if "All user profile" in i]
-
+# gerontius
 
 for i in profiles:
 	results = subprocess.check_output(['netsh','wlan','show','profiles',i,'key=clear']).decode('utf-8').split('\n')
